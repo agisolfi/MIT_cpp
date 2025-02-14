@@ -35,3 +35,34 @@ class PointArray
         const Point *get(const int pos) const;
 
 };
+
+class Polygon{
+    protected:
+        PointArray points;
+        static int polygon_count;
+
+    public:
+        Polygon(const PointArray &pa);
+        Polygon(const Point points[], const int numPoints);
+        ~Polygon() {--polygon_count;}
+
+        virtual double area() const = 0;
+        static int getNumPolygons() {return polygon_count;}
+        int getNumSides() const {return points.getSize();}
+        const PointArray *getPoints() const {return &points;}
+};
+
+class Rectangle : public Polygon {
+
+    public:
+        Rectangle(const Point &a, const Point &b);
+        Rectangle(const int a, const int b, const int c, const int d);
+        virtual double area() const;
+};
+
+class Triangle: public Polygon {
+    public:
+        Triangle(const Point &a, const Point &b, const Point &c);
+        virtual double area() const;
+
+};
