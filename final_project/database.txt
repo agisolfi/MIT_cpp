@@ -1,0 +1,7 @@
+Student 1: 
+Name: Anthony Gisolfi Age: 22 Year: Senior 
+Schedule: 
+Number of Credits: 3
+
+ Courses: Math 
+----------------------------------
